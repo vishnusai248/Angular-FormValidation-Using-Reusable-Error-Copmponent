@@ -1,0 +1,29 @@
+<div class="container d-flex justify-content-center">
+    <div class="row w-50">
+      <div class="col-12">
+        <h1>Login </h1>
+        <div>
+            <form [formGroup]="loginForm" (ngSubmit)="submit()" >
+                <div class="mb-3">
+                  <label>Email:</label>
+                  <input formControlName="email" type="email" class="form-control" id="email"placeholder="Enter email">
+                  <app-validationerrors class="error" [control]="fc['email']" [errorMessages]="validationMessages.email"></app-validationerrors>
+                </div>
+              
+                <div class="mb-3">
+                  <label>Password:</label>
+                  <input type="password" formControlName="password" class="form-control" id="password" placeholder="Enter Password">
+                  <app-validationerrors class="error" [control]="fc['password']" [errorMessages]="validationMessages.password"></app-validationerrors>
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+                </div>
+              </form>
+              
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
